@@ -1,6 +1,8 @@
-# [GamesCollector](https://gamescollector.netlify.app/)
+# [GamesCollector 2.0](https://gamescollector.netlify.app/)
 
-GamesCollector is a passion-driven project built for gamers, by gamers. My goal is to create a central hub where users can discover games, track new releases, build personalized game collections, rate games, and share their experiences.<br><br>
+GamesCollector 2.0 is a major design and functionality upgrade of the [original app](https://github.com/Romandre/gamescollector)<br>
+
+It is in essence a passion-driven project built for gamers, by gamers. My goal is to create a central hub where users can discover games, track new releases, build personalized game collections, rate games, and share their experiences.<br><br>
 
 ## Tech Stack
 
