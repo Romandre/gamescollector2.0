@@ -1,0 +1,26 @@
+.stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+  /* --star-size: 18px; */
+  --star-color: #c8c8c8;
+  --star-background: var(--colors-primary);
+
+  display: inline-block;
+  font-size: var(--star-size);
+  font-family: Times;
+  line-height: 1;
+}
+[data-theme="dark"] .stars {
+  --star-color: #fff;
+}
+
+.stars::before {
+  content: "★★★★★";
+  letter-spacing: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--star-background) var(--percent),
+    var(--star-color) var(--percent)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

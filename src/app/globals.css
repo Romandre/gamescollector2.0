@@ -1,0 +1,170 @@
+@layer reset, base, tokens, recipes, utilities;
+@import "../css/switch.css";
+@import "../css/scroll-bar.css";
+@import "../css/stars-rating.css";
+@import "../css/loader.css";
+
+:root {
+}
+
+html {
+  position: relative;
+}
+
+body {
+  font-family: var(--font-exo-2);
+  font-display: swap;
+  overflow-x: hidden;
+  --skeleton-base-color: #ede2ea;
+  --skeleton-highlight-color: #f6cae9;
+}
+[data-theme="dark"] body {
+  --skeleton-base-color: #261a23;
+  --skeleton-highlight-color: #4c1b3d;
+}
+
+h1 {
+  font-size: 20px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+body,
+.header,
+.divider,
+.menu,
+.search,
+.filters,
+.tile {
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    border 0.2s,
+    color 0.15s;
+}
+
+.modal {
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    color 0.15s;
+}
+
+.react-loading-skeleton {
+  transition:
+    background 0.4s,
+    background-image 0.4s;
+}
+
+button {
+  text-align: center;
+  background-color: var(--colors-primary);
+  color: var(--colors-text-dark);
+  cursor: pointer;
+}
+button.secondary {
+  border: 1px solid var(--colors-primary);
+  background-color: rgba(50, 50, 50, 0.02);
+  color: var(--colors-primary);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #aaa;
+  transition: background-color 999999999s ease-in-out 0s;
+}
+
+.link {
+  color: var(--colors-primary);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.logo {
+  font-family: var(--font-zen-tokyo);
+  font-size: 42px;
+  color: var(--colors-primary);
+  text-align: center;
+  margin-top: 6px;
+}
+
+.react-loading-skeleton {
+  line-height: unset !important;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 997;
+  backdrop-filter: blur(2px);
+  animation: fade-in 0.3s;
+}
+
+.divider {
+  background-color: #333333;
+}
+[data-theme="dark"] .divider {
+  background-color: #ffffff;
+}
+
+*::selection {
+  background: rgba(186, 24, 132, 0.75);
+  color: #ffffff;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@keyframes release-countdown {
+  0% {
+    opacity: 100%;
+  }
+  30% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+  70% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
