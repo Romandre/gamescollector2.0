@@ -128,6 +128,7 @@ export function SortingModal({ isOpen, onClose }: SortingModalProps) {
               })}
               onClick={() => toggleView("list-min")}
             />
+            <span onClick={onClose}>Close</span>
           </div>
         </>
       ) : (
