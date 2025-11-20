@@ -10,14 +10,18 @@ export const tokens = {
     },
     background: {
       light: { value: "#F6F6F6" },
-      dark: { value: "#14151A" },
+      dark: { value: "#0a071b" },
       header: {
-        light: { value: "#FFFFFF" },
-        dark: { value: "#141416" },
+        light: { value: "#ffffff" },
+        dark: { value: "13, 8, 31" },
       },
       search: {
         light: { value: "#E3E3E3" },
         dark: { value: "#23232C" },
+      },
+      modal: {
+        light: { value: "#FFFFFF" },
+        dark: { value: "#503892" },
       },
     },
     text: {
@@ -78,15 +82,15 @@ export default defineConfig({
       },
       ".header": {
         backgroundColor: "{colors.background.header.light}",
-        borderBottom: "2px solid rgba(200, 200, 200, .6)",
-        boxShadow: "0px 2px 16px 4px rgba(50,50,50,0.15)",
+        //borderBottom: "2px solid rgba(200, 200, 200, .6)",
+        //boxShadow: "0px 2px 16px 4px rgba(50,50,50,0.15)",
       },
       ".menu": {
         backgroundColor: "{colors.background.header.light}",
         boxShadow: "0px 8px 8px rgba(50,50,50,0.15)",
       },
       ".search": {
-        backgroundColor: "{colors.background.search.light}",
+        //backgroundColor: "{colors.background.search.light}",
         color: "#555555",
       },
       ".filters": { backgroundColor: "{colors.background.light}" },
@@ -105,21 +109,19 @@ export default defineConfig({
         backgroundColor: "{colors.background.dark}",
       },
       ".header": {
-        backgroundColor: "{colors.background.header.dark}",
-        borderBottom: "2px solid rgba(0, 0, 0, .3)",
-        boxShadow: "0px 0px 12px 0px rgba(0,0,0,0.75)",
+        bg: "rgba({colors.background.header.dark}, 0.4)",
+        backdropFilter: "blur(16px) saturate(140%)",
       },
       ".menu": {
         backgroundColor: "{colors.background.header.dark}",
         boxShadow: "0px 8px 8px rgba(0,0,0,0.55)",
       },
       ".search": {
-        backgroundColor: "{colors.background.search.dark}",
-        color: "#AAAAAA",
+        color: "#FFFFFF",
       },
       ".filters": { backgroundColor: "{colors.background.dark}" },
       ".modal": {
-        backgroundColor: "{colors.background.dark}",
+        backgroundColor: "{colors.background.modal.dark}",
         boxShadow: { base: "0 0 14px rgba(0,0,0,0.7)", sm: "none" },
       },
       ".tile": {

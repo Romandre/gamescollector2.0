@@ -1,10 +1,9 @@
 "use client";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 
 // Components
 import { PlatformIcons, StarsRating } from "./blocks";
 import { Button, SectionTitle } from "./design";
-import Image from "next/image";
 import Link from "next/link";
 import Skeleton from "react-loading-skeleton";
 
@@ -101,13 +100,7 @@ const twoMonthsAgo = getTimestampTwoMonthsAgo();
 // ----------------------- //
 // - HomePage Component - //
 // --------------------- //
-export function HomePage({
-  user,
-  randomImgNumber,
-}: {
-  user: User | null;
-  randomImgNumber: number;
-}) {
+export function HomePage({ user }: { user: User | null }) {
   const gamePannelsLimit = 4;
   const comingSoonQuery = `fields name, first_release_date, cover.*, platforms.*; where first_release_date > ${timeNow} & hypes > 50; sort first_release_date asc; limit ${gamePannelsLimit};`;
   const mostAnticipatedQuery = `fields name, release_dates.*, cover.*, platforms.*, summary, storyline; where first_release_date > ${timeNow}; sort hypes desc; limit ${gamePannelsLimit};`;
@@ -145,11 +138,10 @@ export function HomePage({
         mb: 8,
       })}
     >
-      <PageBackground randomImgNumber={randomImgNumber} />
       <div
         className={css({
           position: "relative",
-          mt: { base: "30px", md: "80px", "2xl": "100px" },
+          mt: { base: "30px", md: "30px", "2xl": "60px" },
           zIndex: 1,
           textAlign: "center",
         })}
@@ -159,12 +151,12 @@ export function HomePage({
             position: "relative",
             display: "inline-block",
             color: "{colors.text.dark}",
-            fontSize: { base: 54, md: 70, "2xl": 74 },
+            fontSize: { base: 54, md: 68, "2xl": 72 },
             fontWeight: 700,
             textWrap: "balance",
             lineHeight: 1.2,
             letterSpacing: 1,
-            textShadow: "4px 6px 4px rgba(0,0,0,0.55)",
+            textShadow: "0px 0px 37px rgba(186, 2, 132, 0.8)",
           })}
         >
           Build Your Ultimate Games Collection
@@ -293,45 +285,6 @@ export function HomePage({
     </div>
   );
 }
-
-const PageBackground = ({ randomImgNumber }: { randomImgNumber?: number }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  return (
-    randomImgNumber && (
-      <div
-        className={css({
-          position: "absolute",
-          top: 0,
-          left: 0,
-          w: "100%",
-          h: "600px",
-          overflow: "hidden",
-          maskImage: {
-            base: "linear-gradient(to top, transparent 2%, 40%, white 60%)",
-            md: "linear-gradient(to top, transparent 2%, 35%, white 55%)",
-          },
-          opacity: isLoaded ? 1 : 0,
-          transition: "opacity 1.2s ease-in-out",
-        })}
-      >
-        <Image
-          src={`/banner/${randomImgNumber}.png`}
-          alt={`img-${randomImgNumber}`}
-          width="200"
-          height="200"
-          style={{ objectFit: "cover", width: "100%", height: "100%" }}
-          className={css({
-            filter: "blur(1.5px) contrast(90%)",
-            scale: "1.01",
-            objectPosition: "center 15%",
-          })}
-          onLoadingComplete={() => setIsLoaded(true)}
-        />
-      </div>
-    )
-  );
-};
 
 const PannelGrid = ({
   title,

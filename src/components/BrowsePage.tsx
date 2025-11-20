@@ -1,9 +1,9 @@
-import { GamesGrid, GameFilters } from "@/components";
+import { GamesGrid, GameToolbar } from "@/components";
 
 export function BrowsePage() {
   return (
     <>
-      <GameFilters />
+      <GameToolbar />
       <GamesGrid />
     </>
   );

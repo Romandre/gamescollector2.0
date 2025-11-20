@@ -31,7 +31,7 @@
   border-radius: 30px;
 }
 [data-theme="dark"] .switch .slider {
-  background-color: #303136;
+  background-color: #1e1a3d;
 }
 
 .switch .slider:before {
@@ -74,11 +74,11 @@
 }
 
 .switch.theme input:checked + .slider {
-  background-color: #303136;
+  background-color: #1e1a3d;
 }
 
 .switch.theme input:checked + .slider:before {
-  background: #303136;
+  background: #1e1a3d;
   box-shadow:
     inset -3px -2px 5px -2px #8983f7,
     inset -10px -4px 0 0 #a3dafb;

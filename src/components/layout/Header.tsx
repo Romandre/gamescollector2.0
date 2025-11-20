@@ -17,24 +17,30 @@ export async function Header() {
 
   return (
     <div
-      className={`header
-        ${css({
-          position: "fixed",
-          w: "100%",
-          zIndex: 999,
-        })}`}
+      className={css({
+        position: "absolute",
+        display: "flex",
+        justifyContent: "center",
+        w: "100%",
+        zIndex: 2,
+      })}
     >
       <div
-        className={css({
+        className={`header
+        ${css({
           display: "flex",
-          maxW: "1800px",
-          w: "100%",
-          h: "54px",
-          mx: "auto",
+          maxW: "800px",
+          w: "auto",
+          h: "65px",
+          mx: { base: 2, md: 0 },
+          my: 3,
+          px: { base: 4, sm: 2, md: 0 },
           justifyContent: "center",
           alignItems: "center",
           overflow: "visible",
-        })}
+          border: "1px solid rgba(62, 56, 94, 0.8)",
+          borderRadius: "8px",
+        })}`}
       >
         <div
           className={css({

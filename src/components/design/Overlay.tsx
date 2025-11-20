@@ -8,7 +8,7 @@ export function Overlay({
   isOpen,
   overflowControl = true,
   setIsOpen,
-  className,
+  className = "",
 }: {
   isOpen: boolean;
   overflowControl?: boolean;

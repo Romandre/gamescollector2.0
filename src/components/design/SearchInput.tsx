@@ -1,6 +1,6 @@
 "use client";
 
-import { KeyboardEvent, useState } from "react";
+import { KeyboardEvent, useState, useEffect } from "react";
 import { redirect, usePathname } from "next/navigation";
 
 // Components
@@ -31,7 +31,7 @@ export function SearchInput({ className }: { className: string }) {
         color: "#FFFFFF",
         bg: "var(--colors-primary)",
         borderRadius: "8px",
-        opacity: 0.9,
+        opacity: 0.8,
         transition: "background 0.3s, color 0.3s",
         cursor: "pointer",
       })
@@ -55,9 +55,6 @@ export function SearchInput({ className }: { className: string }) {
     }
   };
 
-  /* 
-  * Life-search
-  *
   useEffect(() => {
     const trimmed = value.trim();
 
@@ -68,16 +65,16 @@ export function SearchInput({ className }: { className: string }) {
       handleSearch("");
     }
   }, [value, handleSearch]);
-  */
 
   return (
     <div className={css({ position: "relative", w: "full", h: "full" })}>
       <Input
         value={value}
+        name="search"
         className={className}
         onChange={handleChange}
         onKeyUp={searchGamesWithEnter}
-        placeholder="Search by game name"
+        placeholder="Search for games..."
       >
         <IoSearch onClick={searchGames} className={searchIconStyle} />
       </Input>

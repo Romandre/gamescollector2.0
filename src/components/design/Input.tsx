@@ -70,7 +70,7 @@ export function Input({
             fontSize: 14,
             textTransform: "capitalize",
             borderRadius: "0 0 6px 0",
-            opacity: 0.8,
+            opacity: 0.9,
           })}`}
         >
           {label}

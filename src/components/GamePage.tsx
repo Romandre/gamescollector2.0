@@ -303,7 +303,7 @@ const Cover = ({
         maxW: { base: "280px", xs: "300px", sm: "none" },
         mx: "auto",
         mb: { base: 4, md: 8 },
-        boxShadow: "4px -2px 8px rgba(0,0,0,0.3) ",
+        boxShadow: "4px -2px 8px rgba(0,0,0,0.35)",
       })}
     >
       <div

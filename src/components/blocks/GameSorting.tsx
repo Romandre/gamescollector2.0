@@ -17,7 +17,7 @@ import { css } from "../../../styled-system/css";
 import { HiViewList } from "react-icons/hi";
 import { MdViewList } from "react-icons/md";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
-import { IoOptions } from "react-icons/io5";
+import { IoFilter, IoOptions } from "react-icons/io5";
 
 const sortingOptions = ["popularity", "release date", "rating", "alphabet"];
 
@@ -38,6 +38,30 @@ export function GameSorting() {
   return (
     <>
       <Overlay isOpen={isSortingOpen} setIsOpen={setIsSortingOpen} />
+      <div
+        className={css({
+          position: "absolute",
+          display: "block",
+          float: "left",
+          mt: { base: 0, md: "3px" },
+        })}
+      >
+        {isSortingLoading ? (
+          <Skeleton width={50} className={css({ ml: { base: 0, md: 2 } })} />
+        ) : (
+          <div
+            className={css({ position: "relative", cursor: "pointer" })}
+            onClick={() => {}}
+          >
+            <IoFilter
+              className={css({
+                mx: 1,
+                fontSize: 26,
+              })}
+            />
+          </div>
+        )}
+      </div>
       <div
         className={css({
           display: { base: "block", md: "none" },
@@ -71,7 +95,7 @@ export function GameSorting() {
           flexDirection: { base: "column", md: "row" },
           alignItems: { base: "end", md: "center" },
           h: { base: "100dvh", md: 10 },
-          ml: { md: "13%", lg: 0 },
+          ml: "13%",
           pr: { base: 4, md: 2 },
           pl: { base: 4, md: 0 },
           pt: { base: "80px", md: 0 },
