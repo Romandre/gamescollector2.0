@@ -28,13 +28,14 @@ export async function Header() {
       <div
         className={`header
         ${css({
+          position: {base: "fixed", sm: "absolute"},
           display: "flex",
           maxW: "800px",
           w: "auto",
           h: "65px",
           mx: { base: 2, md: 0 },
-          my: 3,
-          px: { base: 4, sm: 2, md: 0 },
+          my: {base: 2, sm: 3},
+          px: {base: 4, sm: 0},
           justifyContent: "center",
           alignItems: "center",
           overflow: "visible",
@@ -46,7 +47,7 @@ export async function Header() {
           className={css({
             display: "flex",
             justifyContent: "center",
-            flexBasis: { base: "96px", sm: "140px" },
+            flexBasis: { base: "86px", sm: "140px" },
             flexShrink: 0,
           })}
         >

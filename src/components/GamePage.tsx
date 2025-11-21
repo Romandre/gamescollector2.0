@@ -1135,7 +1135,6 @@ const ImagesFullView = ({
             top: "50%",
             left: "50%",
             aspectRatio: "16/10",
-            bg: "rgba(100,100,100,0.2)",
             transform: {
               base: "translate(-50%, -50%)",
               sm: "translate(-50%, -42%)",
@@ -1197,9 +1196,9 @@ const GalleryChevron = ({
     <div
       className={css({
         position: "absolute",
+        display: "block",
         w: "50%",
         h: "full",
-        top: 0,
         left: isLeftChevron ? 0 : "unset",
         right: !isLeftChevron ? 0 : "unset",
         cursor: "pointer",
@@ -1210,13 +1209,16 @@ const GalleryChevron = ({
         className={css({
           position: "absolute",
           display: "flex",
+          top: "50%",
+          transform: "translateY(-50%)",
           w: 12,
-          h: "full",
-          left: isLeftChevron ? { base: 0, md: -12 } : "unset",
-          right: !isLeftChevron ? { base: 0, md: -12 } : "unset",
+          h: 12,
+          left: isLeftChevron ? { base: 2, md: -16 } : "unset",
+          right: !isLeftChevron ? { base: 2, md: -16 } : "unset",
           alignItems: "center",
           justifyContent: "center",
           bg: "rgba(255,255,255,.2)",
+          borderRadius: "12px",
         })}
       >
         {isLeftChevron ? (

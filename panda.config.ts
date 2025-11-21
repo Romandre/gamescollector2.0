@@ -110,7 +110,7 @@ export default defineConfig({
       },
       ".header": {
         bg: "rgba({colors.background.header.dark}, 0.4)",
-        backdropFilter: "blur(16px) saturate(140%)",
+        backdropFilter: "blur(14px) saturate(140%)",
       },
       ".menu": {
         backgroundColor: "{colors.background.header.dark}",
